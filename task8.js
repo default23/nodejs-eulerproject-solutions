@@ -33,13 +33,10 @@ var maxSeqQ = 0;
 for (var i = 0; i < src.length; i++) {
 
 	var currSeqQ = 1;
-	for (j = i; j < (i + seq); j++) {
-		if (src[j]) currSeqQ *= src[j];
-	}	
-
-	if (currSeqQ > maxSeqQ) {
-		maxSeqQ = currSeqQ;
-	}
+	
+	for (j = i; j < (i + seq); j++) if (src[j]) currSeqQ *= src[j];
+	
+	if (currSeqQ > maxSeqQ) maxSeqQ = currSeqQ;
 } 
 
 console.log("Max sequence is: " + maxSeqQ);
